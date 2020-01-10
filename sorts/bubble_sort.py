@@ -22,12 +22,14 @@ def bubble_sort(collection):
     [-23,-4,0,6,34]
     """
     length = len(collection)
+    last = length - 1
     for i in range(length-1):
         swapped = False
-        for j in range(length-1-i):
+        for j in range(last):
             if collection[j] > collection[j+1]:
                 swapped = True
                 collection[j], collection[j+1] = collection[j+1], collection[j]
+                last = j
         if not swapped: break  # Stop iteration if the collection is sorted.
     return collection
 
